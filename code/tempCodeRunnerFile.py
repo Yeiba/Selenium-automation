@@ -1,0 +1,1 @@
+os.system('python3 ../code/IproBooking.py')
