@@ -8,17 +8,16 @@ from os import getenv, path
 import dotenv
 
 Now = datetime.datetime.now()
-ipro_csv_url = getenv('ipro_csv_url')
 df = pd.read_csv('./comparison/Iprobooking.csv')
-# df = pd.read_csv('../code/comparison/Iprobooking.csv')
+
 iproarray = df.to_numpy()
 
 sheet = np.array([["ipro hotels", "prix", "mygo hotels", "prix"]])
 for iprocolum in iproarray:
     iproname = iprocolum[0]
-    mygo_csv_url = getenv('mygo_csv_url')
+
     df = pd.read_csv('./comparison/MyGo.csv')
-    # df = pd.read_csv('../code/comparison/MyGo.csv')
+
     mygoarray = df.to_numpy()
     oldratio = int(90)
     matching = ["/", "/"]
@@ -41,16 +40,16 @@ df.to_csv(
     f'./comparison/comparison_Mygo{Now}.csv', index=False, header=False)
 
 ####################################################################################################
-ipro_csv_url = getenv('ipro_csv_url')
+
 df = pd.read_csv('./comparison/Iprobooking.csv')
 iproarray = df.to_numpy()
 
 sheet = np.array([["ipro hotels", "prix", "clicngo hotels", "prix"]])
 for iprocolum in iproarray:
     iproname = iprocolum[0]
-    clicngo_csv_url = getenv('clicngo_csv_url')
+
     df = pd.read_csv('./comparison/clicngo.csv')
-    # df = pd.read_csv('../code/comparison/clicngo.csv')
+
     clicarray = df.to_numpy()
     oldratio = int(90)
     matching = ["/", "/"]
