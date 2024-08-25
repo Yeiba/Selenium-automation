@@ -14,9 +14,7 @@ import pandas as pd
 from thefuzz import fuzz, process
 from os import getenv, path
 import dotenv
-import datetime
 
-Now = datetime.datetime.now()
 
 nlp = spacy.load("fr_core_news_sm")
 willayas = getenv('willayas')
@@ -209,7 +207,7 @@ print(len(hotellist), len(priceslist))
 a = {"names": hotellist, "prix": priceslist}
 df = pd.DataFrame.from_dict(a, orient='index')
 df = df.transpose()
-df.to_csv(f'./comparison/clicngo{Now}.csv', index=False, header=False)
+df.to_csv('./comparison/clicngo.csv', index=False, header=False)
 
 time.sleep(3)
 driver.close()

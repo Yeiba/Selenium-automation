@@ -14,9 +14,6 @@ from nltk.tokenize import sent_tokenize
 import pandas as pd
 from os import getenv, path
 import dotenv
-import datetime
-
-Now = datetime.datetime.now()
 
 
 date_start = input(str("start (day/monthe/year) : "))
@@ -270,7 +267,7 @@ except:
     pass
 
 df = pd.DataFrame(sheet, columns=["names", "prix"])
-df.to_csv(f'./comparison/MyGo{Now}.csv', index=False, header=False)
+df.to_csv('./comparison/MyGo.csv', index=False, header=False)
 
 time.sleep(3)
 driverfx.close()

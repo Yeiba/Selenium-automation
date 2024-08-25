@@ -14,9 +14,7 @@ from nltk.tokenize import sent_tokenize
 import pandas as pd
 from os import getenv, path
 import dotenv
-import datetime
 
-Now = datetime.datetime.now()
 
 nlp = spacy.load("fr_core_news_sm")
 willayas = getenv('willayas')
@@ -167,7 +165,7 @@ except:
 
 
 df = pd.DataFrame(sheet, columns=["names", "prix"])
-df.to_csv(f'./ccomparison/Iprobooking{Now}.csv', index=False, header=False)
+df.to_csv('./ccomparison/Iprobooking.csv', index=False, header=False)
 
 time.sleep(3)
 driver.close()
